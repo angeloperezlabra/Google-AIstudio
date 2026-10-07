@@ -1,0 +1,6 @@
+{
+  "name": "¡CromoEspañol! Álbum Coleccionable de Vocabulario",
+  "description": "Álbum interactivo de cromos adhesivos para estudiantes universitarios chinos que aprenden español. Colecciona estampas, pega las palabras correctas y llena tu álbum de ilustraciones a todo color.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

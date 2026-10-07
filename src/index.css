@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, .font-heading {
+    font-family: 'Fredoka', 'Noto Sans SC', cursive, sans-serif;
+  }
+}
+
+/* Custom subtle sticker album aesthetics */
+.album-paper {
+  background-color: #fbf7ee;
+  background-image: radial-gradient(#e5dec9 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+}
+
+.sticker-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06),
+              0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.sticker-slot-empty {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(226, 232, 240, 0.4),
+    rgba(226, 232, 240, 0.4) 10px,
+    rgba(241, 245, 249, 0.6) 10px,
+    rgba(241, 245, 249, 0.6) 20px
+  );
+}
+
+.foil-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.foil-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: shimmer 4s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+@keyframes peel-in {
+  0% {
+    transform: scale(1.15) rotate(4deg);
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.3));
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(0.97) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.12));
+    opacity: 1;
+  }
+}
+
+.animate-peel-in {
+  animation: peel-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
